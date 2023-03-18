@@ -2,12 +2,22 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigation from "./RootNavigation";
+import allReducer from "./src/reducers";
+import thunk from "redux-thunk";
+import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 
 export default function App() {
+  const store = configureStore({
+    reducer: allReducer,
+    middleware: [thunk],
+  });
   return (
-    <NavigationContainer>
-      <RootNavigation />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
