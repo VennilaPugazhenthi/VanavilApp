@@ -1,15 +1,29 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-const CustomInput = ({ value, setValue, placeholder }) => {
+const CustomInput = ({ value, setValue, placeholder, type }) => {
   return (
     <View style={styles.container}>
-      <TextInput
-        value={value}
-        onChangeText={setValue}
-        placeholder={placeholder}
-        style={styles.input}
-      />
+      {type == "number" ? (
+        <TextInput
+          value={value}
+          onChangeText={setValue}
+          placeholder={placeholder}
+          style={styles.input}
+          keyboardType="number-pad"
+          returnKeyType="done"
+          textContentType="telephoneNumber"
+          dataDetectorTypes="phoneNumber"
+          maxLength={10}
+        />
+      ) : (
+        <TextInput
+          value={value}
+          onChangeText={setValue}
+          placeholder={placeholder}
+          style={styles.input}
+        />
+      )}
     </View>
   );
 };
@@ -22,7 +36,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    marginBottom: 20,
+    marginVertical: 10,
   },
   input: {
     height: 50,
