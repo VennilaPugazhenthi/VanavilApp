@@ -8,7 +8,7 @@ const CustomerLoginScreen = ({ navigation }) => {
   const [phoneNo, setPhoneNo] = useState("");
 
   const onSignInPressed = () => {
-    console.warn("Sign In");
+    navigation.navigate("tab");
   };
 
   const onCreateNewAccount = () => {
