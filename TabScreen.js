@@ -9,7 +9,7 @@ import Constants from "expo-constants";
 import { Fontisto, MaterialCommunityIcons } from "@expo/vector-icons";
 import ProfileScreen from "./src/screens/ProfileScreen";
 import TrackScreen from "./src/screens/TrackScreen";
-
+import COLORS from "./src/consts/colors";
 const Tab = createBottomTabNavigator();
 
 const tabOptions = {
@@ -50,10 +50,10 @@ export default TabScreen = (props) => {
             tabBarLabelStyle: ({ focused }) => {
               focused
                 ? {
-                    color: "blue",
+                    color: COLORS.blue,
                   }
                 : {
-                    color: "black",
+                    color: COLORS.black,
                   };
             },
             tabBarIcon: ({ focused }) =>
@@ -61,13 +61,13 @@ export default TabScreen = (props) => {
                 <MaterialCommunityIcons
                   name="car-wash"
                   size={24}
-                  color="blue"
+                  color={COLORS.blue}
                 />
               ) : (
                 <MaterialCommunityIcons
                   name="car-wash"
                   size={24}
-                  color="black"
+                  color={COLORS.black}
                 />
               ),
           }}
@@ -80,18 +80,23 @@ export default TabScreen = (props) => {
             tabBarLabelStyle: ({ focused }) => {
               focused
                 ? {
-                    color: "blue",
+                    color: COLORS.blue,
                   }
                 : {
-                    color: "black",
+                    color: COLORS.black,
                   };
             },
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Fontisto name="shopping-store" size={24} color="blue" />
+                <Fontisto name="shopping-store" size={24} color={COLORS.blue} />
               ) : (
-                <Fontisto name="shopping-store" size={24} color="black" />
+                <Fontisto
+                  name="shopping-store"
+                  size={24}
+                  color={COLORS.black}
+                />
               ),
+            header: () => null,
           }}
         />
         <Tab.Screen
@@ -102,17 +107,17 @@ export default TabScreen = (props) => {
             tabBarLabelStyle: ({ focused }) => {
               focused
                 ? {
-                    color: "blue",
+                    color: COLORS.blue,
                   }
                 : {
-                    color: "black",
+                    color: COLORS.black,
                   };
             },
             tabBarIcon: ({ focused }) =>
               focused ? (
-                <Fontisto name="person" size={24} color="blue" />
+                <Fontisto name="person" size={24} color={COLORS.blue} />
               ) : (
-                <Fontisto name="person" size={24} color="black" />
+                <Fontisto name="person" size={24} color={COLORS.black} />
               ),
           }}
         />

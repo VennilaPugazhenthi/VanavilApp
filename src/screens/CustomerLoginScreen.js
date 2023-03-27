@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
+import COLORS from "../consts/colors";
 
 const CustomerLoginScreen = ({ navigation }) => {
   const [phoneNo, setPhoneNo] = useState("");
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 0,
     fontSize: 25,
-    color: "#092357",
+    color: COLORS.darkBlue,
     textAlign: "center",
   },
 });
